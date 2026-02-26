@@ -1,0 +1,189 @@
+:root {
+    --accent: #ffcc00;
+    --bg-main: #1a1a1b;
+    --bg-item: #272728;
+    --border: #333334;
+    --text: #ffffff;
+    --text-muted: #8e8e8e;
+    --success: #00c166;
+    --error: #ff3333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, system-ui, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: #0e0e0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.auth-card {
+    width: 350px;
+    background: var(--bg-main);
+    border-radius: 24px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header-main { font-size: 14px; font-weight: 600; color: var(--text); }
+.header-sub { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; }
+
+.verify-row {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.track {
+    position: relative;
+    height: 52px;
+    background: var(--bg-item);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.thumb {
+    position: absolute;
+    left: 5px;
+    width: 42px;
+    height: 42px;
+    background: var(--accent);
+    border-radius: 9px;
+    cursor: grab;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.track-label {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.checkbox-area {
+    height: 52px;
+    background: var(--bg-item);
+    border-radius: 12px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.check-text { color: #fff; font-size: 14px; }
+
+.check-box {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #444;
+    border-radius: 6px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-icon {
+    display: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cell-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cell-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.cell {
+    width: 52px;
+    height: 52px;
+    background: var(--bg-item);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    outline: none;
+}
+
+.cell:focus {
+    border-color: var(--accent);
+    background: #2f2f30;
+}
+
+.action-btn {
+    width: 100%;
+    height: 52px;
+    background: var(--accent);
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.action-btn:active { transform: scale(0.98); }
+
+.status-footer {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--text-muted);
+}
+
+.spinner {
+    display: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-top: 2px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.success-ui { background: var(--success) !important; border-color: var(--success) !important; color: white !important; }
+.done-row { border-color: var(--success) !important; }
